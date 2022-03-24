@@ -11,11 +11,12 @@ namespace ConsoleApp4
         static void Main(string[] args)
         {
             Console.Write("Введите количество людей в очереди: "); 
-            int N = Convert.ToInt32(Console.ReadLine()); 
-            int hours = 10 * N / 60; 
-            int minuts = 10 * N % 60; 
-            Console.WriteLine("Вы должны отстоять в очереди " + hours + " часа " + minuts + " минут");
-
+            int peopleInQueue = Convert.ToInt32(Console.ReadLine()); 
+            int timePerPerson = 10;
+            int minutesPerHour = 60;
+            int hoursCount = timePerPerson * peopleInQueue / minutesPerHour;
+            int minutsCount = timePerPerson * peopleInQueue % minutesPerHour; 
+            Console.WriteLine("Вы должны отстоять в очереди " + hoursCount + " часа " + minutsCount + " минут");
         }
     }
 }
